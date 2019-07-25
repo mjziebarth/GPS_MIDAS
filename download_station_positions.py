@@ -2,12 +2,12 @@
 import urllib.request
 
 # Load all station names:
-with open('midas-station-names.csv','r') as f:
+with open('midas.IGS08.txt','r') as f:
 	names = f.readlines()
 
 N = len(names)
 for i in range(N):
-	names[i] = names[i].strip('\n')
+	names[i] = names[i].strip('\n').split()[0]
 
 # Now for each station name, load corresponding web page and extract lon and lat:
 lons = []
